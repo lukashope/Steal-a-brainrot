@@ -1,0 +1,74 @@
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+-- Create GUI
+local gui = Instance.new("ScreenGui")
+gui.Name = "NdoxBrainrotGUI"
+gui.ResetOnSpawn = false
+gui.IgnoreGuiInset = true
+gui.Parent = playerGui
+
+-- Main Frame
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 300, 0, 240)
+frame.Position = UDim2.new(0.5, -150, 0.5, -120)
+frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+frame.BorderSizePixel = 0
+frame.Parent = gui
+frame.Active = true
+frame.Draggable = true
+
+-- Title Label
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, 0, 0, 40)
+title.Position = UDim2.new(0, 0, 0, 0)
+title.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+title.Text = "ndox script spawn any brainrot V3"
+title.TextColor3 = Color3.new(1, 1, 1)
+title.Font = Enum.Font.GothamBold
+title.TextSize = 16
+title.Parent = frame
+
+-- TextBox 1 - Get Any Brainrot
+local brainrotInput = Instance.new("TextBox")
+brainrotInput.PlaceholderText = "get any brainrot"
+brainrotInput.Size = UDim2.new(0.8, 0, 0, 30)
+brainrotInput.Position = UDim2.new(0.1, 0, 0.35, 0)
+brainrotInput.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+brainrotInput.TextColor3 = Color3.new(1, 1, 1)
+brainrotInput.Font = Enum.Font.Gotham
+brainrotInput.TextSize = 14
+brainrotInput.ClearTextOnFocus = false
+brainrotInput.Parent = frame
+
+-- TextBox 2 - Get Mutations
+local mutationInput = Instance.new("TextBox")
+mutationInput.PlaceholderText = "get Mutations"
+mutationInput.Size = UDim2.new(0.8, 0, 0, 30)
+mutationInput.Position = UDim2.new(0.1, 0, 0.55, 0)
+mutationInput.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+mutationInput.TextColor3 = Color3.new(1, 1, 1)
+mutationInput.Font = Enum.Font.Gotham
+mutationInput.TextSize = 14
+mutationInput.ClearTextOnFocus = false
+mutationInput.Parent = frame
+
+-- Spawn Button
+local spawnButton = Instance.new("TextButton")
+spawnButton.Text = "spawn"
+spawnButton.Size = UDim2.new(0.8, 0, 0, 35)
+spawnButton.Position = UDim2.new(0.1, 0, 0.75, 0)
+spawnButton.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+spawnButton.TextColor3 = Color3.new(1, 1, 1)
+spawnButton.Font = Enum.Font.GothamBold
+spawnButton.TextSize = 14
+spawnButton.Parent = frame
+
+spawnButton.MouseButton1Click:Connect(function()
+	local brainrot = brainrotInput.Text
+	local mutation = mutationInput.Text
+	print("Spawn requested:")
+	print("Brainrot:", brainrot)
+	print("Mutation:", mutation)
+end)
